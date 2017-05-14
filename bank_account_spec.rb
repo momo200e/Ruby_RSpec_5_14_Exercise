@@ -16,6 +16,9 @@ RSpec.describe BankAccount do
 
     describe "領錢功能" do
       it "原本帳戶有 10 元，領出 5 元之後，帳戶餘額變 5 元" do
+        account = BankAccount.new(10)
+        account.withdraw 5
+        expect(account.balance).to be 5
       end
 
       it "原本帳戶有 10 元，試圖領出 20 元，帳戶餘額還是 10 元，但無法領出（餘額不足）" do
