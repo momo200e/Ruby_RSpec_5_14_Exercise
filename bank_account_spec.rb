@@ -28,6 +28,9 @@ RSpec.describe BankAccount do
       end
 
       it "原本帳戶有 10 元，領出 -5 元之後，帳戶餘額還是 10 元（不能領出小於或等於零的金額）" do
+        account = BankAccount.new(10)
+        account.withdraw -5
+        expect(account.balance).to be 10
       end
     end
   end
